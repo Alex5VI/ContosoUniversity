@@ -19,9 +19,11 @@ namespace ContosoUniversity.MVC.Controllers
         {
             //URL: http://es.softuses.com/147952
 
-            string url = "http://localhost:59114/ServiceForMVC.svc?wsdl";
+            //string url = "http://localhost:59114/ServiceForMVC.svc?wsdl";
+            string URI = "http://localhost:59114/ServiceForMVC.svc?wsdl";
+
             BasicHttpBinding binding = new BasicHttpBinding();
-            EndpointAddress endpoint = new EndpointAddress(url);
+            EndpointAddress endpoint = new EndpointAddress(URI);
             ChannelFactory<IServiceForMVC> chanFac = new ChannelFactory<IServiceForMVC>(binding, endpoint);
             IServiceForMVC clientProxy = chanFac.CreateChannel();
             List<Estudiante> lst = new List<Estudiante>();
