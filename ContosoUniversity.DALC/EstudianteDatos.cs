@@ -65,6 +65,31 @@ namespace ContosoUniversity.DALC
             }
         #endregion
 
+        #region "Procedimientos Mantenimientos"
+            public int insertarEstudiante(Estudiante _obj)
+            {
+                int vReturn = 0;
+                try
+                {
+                    using (SqlCommand oCommand = new SqlCommand("uspInsertarEstudiante", oCn))
+                    {
+                        oCommand.CommandType = CommandType.StoredProcedure;
+                        oCommand.Parameters.Add(new SqlParameter("@LastName", SqlDbType.NVarChar, 50)).Value = _obj.LastName;
+                        oCommand.Parameters.Add(new SqlParameter("@FirstName", SqlDbType.NVarChar, 50)).Value = _obj.FirstName;
+                        oCommand.Parameters.Add(new SqlParameter("@EnrollmentDate", SqlDbType.VarChar, 8)).Value = _obj.EnrollmentDate;
+                        oCommand.Parameters.Add(new SqlParameter("@StudentID", SqlDbType.Int)).Direction = ParameterDirection.Output;
+                        oCommand.ExecuteNonQuery();
+                        vReturn = Convert.ToInt32(oCommand.Parameters["@StudentID"].Value);
+                    }
+                    return vReturn;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+        #endregion
+
         #region "Constructor & Disposable"
             private bool _disposed = false;
             SqlConnection oCn = null;

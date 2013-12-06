@@ -11,5 +11,6 @@ namespace ContosoUniversity.BL
     public interface IEstudianteNegocio
     {
         List<Estudiante> listarEstudiantes();
+        int insertarEstudiante(Estudiante _obj);
     }
 }
