@@ -15,14 +15,6 @@
         <legend>Estudiante</legend>
 
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.StudentID) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.StudentID) %>
-            <%: Html.ValidationMessageFor(model => model.StudentID) %>
-        </div>
-
-        <div class="editor-label">
             <%: Html.LabelFor(model => model.LastName) %>
         </div>
         <div class="editor-field">
