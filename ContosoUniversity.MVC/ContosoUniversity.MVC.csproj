@@ -256,6 +256,7 @@
     <Content Include="Scripts\knockout-2.1.0.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="Views\Student\Create.aspx" />
+    <Content Include="Views\Student\Details.aspx" />
     <Content Include="Views\Student\Index.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

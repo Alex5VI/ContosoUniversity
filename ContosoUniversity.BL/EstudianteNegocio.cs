@@ -43,6 +43,21 @@ namespace ContosoUniversity.BL
                     throw ex;
                 }
             }
+
+            public Estudiante seleccionarEstudiante(int _StudentID)
+            {
+                try
+                {
+                    using (EstudianteDatos Dalc = new EstudianteDatos())
+                    {
+                        return Dalc.Instancia.seleccionarEstudiante(_StudentID);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
         #endregion
 
         #region "Procedimientos Mantenimientos"

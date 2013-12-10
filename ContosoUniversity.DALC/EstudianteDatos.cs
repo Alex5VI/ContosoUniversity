@@ -63,6 +63,38 @@ namespace ContosoUniversity.DALC
                     throw ex;
                 }
             }
+
+            public Estudiante seleccionarEstudiante(int _StudentID)
+            {
+                try
+                {
+                    Estudiante obj = new Estudiante();
+                    using (SqlCommand oCommand = new SqlCommand("uspSeleccionarEstudiante", oCn))
+                    {
+                        oCommand.CommandType = CommandType.StoredProcedure;
+                        oCommand.Parameters.Add(new SqlParameter("@StudentID", SqlDbType.Int)).Value = _StudentID;
+                        using (SqlDataReader drListado = oCommand.ExecuteReader(CommandBehavior.SingleResult | CommandBehavior.CloseConnection))
+                        {
+                            if (drListado.HasRows)
+                            {
+                                while ((drListado.Read()))
+                                {
+                                    obj.StudentID = drListado.GetInt32(drListado.GetOrdinal("StudentID"));
+                                    obj.LastName = drListado.GetString(drListado.GetOrdinal("LastName"));
+                                    obj.FirstName = drListado.GetString(drListado.GetOrdinal("FirstName"));
+                                    obj.EnrollmentDate = drListado.GetString(drListado.GetOrdinal("EnrollmentDate"));
+                                }
+                            }
+                        }
+                    }
+
+                    return obj;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
         #endregion
 
         #region "Procedimientos Mantenimientos"

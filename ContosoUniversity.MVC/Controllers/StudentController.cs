@@ -63,5 +63,16 @@ namespace ContosoUniversity.MVC.Controllers
                 return View();
             }
         }
+
+        public ActionResult Details(int _id)
+        {
+            BasicHttpBinding binding = new BasicHttpBinding();
+            EndpointAddress endpoint = new EndpointAddress(URI);
+            ChannelFactory<IServiceForMVC> chanFac = new ChannelFactory<IServiceForMVC>(binding, endpoint);
+            IServiceForMVC clientProxy = chanFac.CreateChannel();
+            Estudiante obj = new Estudiante();
+            obj = clientProxy.seleccionarEstudiante(_id);
+            return View(obj);
+        }
     }
 }

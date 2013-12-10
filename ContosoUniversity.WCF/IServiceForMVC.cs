@@ -17,5 +17,7 @@ namespace ContosoUniversity.WCF
         List<Estudiante> listarEstudiantes();
         [OperationContract]
         int insertarEstudiante(Estudiante _obj);
+        [OperationContract]
+        Estudiante seleccionarEstudiante(int _StudentID);
     }
 }

@@ -26,5 +26,13 @@ namespace ContosoUniversity.WCF
             int vReturn = obj.Instancia.insertarEstudiante(_obj);
             return vReturn;
         }
+
+        public Estudiante seleccionarEstudiante(int _StudentID)
+        {
+            EstudianteNegocio obj = new EstudianteNegocio();
+            Estudiante _obj = new Estudiante();
+            _obj = obj.Instancia.seleccionarEstudiante(_StudentID);
+            return _obj;
+        }
     }
 }

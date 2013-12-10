@@ -11,5 +11,6 @@ namespace ContosoUniversity.DALC
     {
         List<Estudiante> listarEstudiantes();
         int insertarEstudiante(Estudiante _obj);
+        Estudiante seleccionarEstudiante(int _StudentID);
     }
 }
