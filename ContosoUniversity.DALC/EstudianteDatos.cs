@@ -65,6 +65,25 @@ namespace ContosoUniversity.DALC
             }
         #endregion
 
+        #region "Procedimientos Mantenimientos"
+            public void eliminarEstudiante(int _StudentID)
+            {
+                try
+                {
+                    using (SqlCommand oCommand = new SqlCommand("uspEliminarEstudiante", oCn))
+                    {
+                        oCommand.CommandType = CommandType.StoredProcedure;
+                        oCommand.Parameters.Add(new SqlParameter("@StudentID", SqlDbType.Int)).Value = _StudentID;
+                        oCommand.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+        #endregion
+
         #region "Constructor & Disposable"
             private bool _disposed = false;
             SqlConnection oCn = null;

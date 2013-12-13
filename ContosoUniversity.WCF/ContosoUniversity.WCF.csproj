@@ -39,6 +39,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ContosoUniversity.BE, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ContosoUniversity.BE\bin\Debug\ContosoUniversity.BE.dll</HintPath>
+    </Reference>
+    <Reference Include="ContosoUniversity.BL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ContosoUniversity.BL\bin\Debug\ContosoUniversity.BL.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -79,16 +87,6 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ContosoUniversity.BE\ContosoUniversity.BE.csproj">
-      <Project>{7918e5f5-55ac-42b6-b3bb-9a1ae2645e50}</Project>
-      <Name>ContosoUniversity.BE</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ContosoUniversity.BL\ContosoUniversity.BL.csproj">
-      <Project>{e891c42a-1c40-4cb5-bab2-0b62eff7f784}</Project>
-      <Name>ContosoUniversity.BL</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

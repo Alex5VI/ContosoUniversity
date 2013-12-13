@@ -15,5 +15,7 @@ namespace ContosoUniversity.WCF
     {
         [OperationContract]
         List<Estudiante> listarEstudiantes();
+        [OperationContract]
+        void eliminarEstudiante(int _StudentID);
     }
 }

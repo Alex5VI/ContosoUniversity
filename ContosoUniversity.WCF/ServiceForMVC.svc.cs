@@ -19,5 +19,11 @@ namespace ContosoUniversity.WCF
             lst = obj.Instancia.listarEstudiantes();
             return lst;
         }
+
+        public void eliminarEstudiante(int _StudentID)
+        {
+            EstudianteNegocio obj = new EstudianteNegocio();
+            obj.Instancia.eliminarEstudiante(_StudentID);
+        }
     }
 }

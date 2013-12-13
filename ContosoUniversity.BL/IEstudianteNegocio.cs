@@ -11,5 +11,6 @@ namespace ContosoUniversity.BL
     public interface IEstudianteNegocio
     {
         List<Estudiante> listarEstudiantes();
+        void eliminarEstudiante(int _StudentID);
     }
 }

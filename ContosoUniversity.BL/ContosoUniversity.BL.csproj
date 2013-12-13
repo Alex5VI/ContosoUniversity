@@ -30,6 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ContosoUniversity.BE, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ContosoUniversity.BE\bin\Debug\ContosoUniversity.BE.dll</HintPath>
+    </Reference>
+    <Reference Include="ContosoUniversity.DALC, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ContosoUniversity.DALC\bin\Debug\ContosoUniversity.DALC.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,16 +50,6 @@
     <Compile Include="EstudianteNegocio.cs" />
     <Compile Include="IEstudianteNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ContosoUniversity.BE\ContosoUniversity.BE.csproj">
-      <Project>{7918e5f5-55ac-42b6-b3bb-9a1ae2645e50}</Project>
-      <Name>ContosoUniversity.BE</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ContosoUniversity.DALC\ContosoUniversity.DALC.csproj">
-      <Project>{5ce62c58-afff-4d7e-92b8-29965ed709fb}</Project>
-      <Name>ContosoUniversity.DALC</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
