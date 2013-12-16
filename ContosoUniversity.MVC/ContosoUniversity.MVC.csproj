@@ -255,11 +255,8 @@
     <Content Include="Scripts\knockout-2.1.0.debug.js" />
     <Content Include="Scripts\knockout-2.1.0.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
-<<<<<<< HEAD
     <Content Include="Views\Student\Create.aspx" />
     <Content Include="Views\Student\Details.aspx" />
-=======
->>>>>>> Rama_II
     <Content Include="Views\Student\Index.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -337,18 +334,10 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-<<<<<<< HEAD
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
   <Target Name="AfterBuild">
-=======
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
->>>>>>> Rama_II
   </Target> -->
 </Project>
