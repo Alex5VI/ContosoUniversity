@@ -10,5 +10,7 @@ namespace ContosoUniversity.DALC
     public interface IEstudianteDatos
     {
         List<Estudiante> listarEstudiantes();
+        int insertarEstudiante(Estudiante _obj);
+        Estudiante seleccionarEstudiante(int _StudentID);
     }
 }

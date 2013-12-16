@@ -63,6 +63,63 @@ namespace ContosoUniversity.DALC
                     throw ex;
                 }
             }
+
+            public Estudiante seleccionarEstudiante(int _StudentID)
+            {
+                try
+                {
+                    Estudiante obj = new Estudiante();
+                    using (SqlCommand oCommand = new SqlCommand("uspSeleccionarEstudiante", oCn))
+                    {
+                        oCommand.CommandType = CommandType.StoredProcedure;
+                        oCommand.Parameters.Add(new SqlParameter("@StudentID", SqlDbType.Int)).Value = _StudentID;
+                        using (SqlDataReader drListado = oCommand.ExecuteReader(CommandBehavior.SingleResult | CommandBehavior.CloseConnection))
+                        {
+                            if (drListado.HasRows)
+                            {
+                                while ((drListado.Read()))
+                                {
+                                    obj.StudentID = drListado.GetInt32(drListado.GetOrdinal("StudentID"));
+                                    obj.LastName = drListado.GetString(drListado.GetOrdinal("LastName"));
+                                    obj.FirstName = drListado.GetString(drListado.GetOrdinal("FirstName"));
+                                    obj.EnrollmentDate = drListado.GetString(drListado.GetOrdinal("EnrollmentDate"));
+                                }
+                            }
+                        }
+                    }
+
+                    return obj;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+        #endregion
+
+        #region "Procedimientos Mantenimientos"
+            public int insertarEstudiante(Estudiante _obj)
+            {
+                int vReturn = 0;
+                try
+                {
+                    using (SqlCommand oCommand = new SqlCommand("uspInsertarEstudiante", oCn))
+                    {
+                        oCommand.CommandType = CommandType.StoredProcedure;
+                        oCommand.Parameters.Add(new SqlParameter("@LastName", SqlDbType.NVarChar, 50)).Value = _obj.LastName;
+                        oCommand.Parameters.Add(new SqlParameter("@FirstName", SqlDbType.NVarChar, 50)).Value = _obj.FirstName;
+                        oCommand.Parameters.Add(new SqlParameter("@EnrollmentDate", SqlDbType.VarChar, 8)).Value = _obj.EnrollmentDate;
+                        oCommand.Parameters.Add(new SqlParameter("@StudentID", SqlDbType.Int)).Direction = ParameterDirection.Output;
+                        oCommand.ExecuteNonQuery();
+                        vReturn = Convert.ToInt32(oCommand.Parameters["@StudentID"].Value);
+                    }
+                    return vReturn;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
         #endregion
 
         #region "Constructor & Disposable"

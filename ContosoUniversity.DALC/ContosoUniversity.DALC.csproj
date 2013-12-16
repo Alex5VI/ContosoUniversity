@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ContosoUniversity.BE, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ContosoUniversity.BE\bin\Debug\ContosoUniversity.BE.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
@@ -43,12 +47,6 @@
     <Compile Include="EstudianteDatos.cs" />
     <Compile Include="IEstudianteDatos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ContosoUniversity.BE\ContosoUniversity.BE.csproj">
-      <Project>{7918e5f5-55ac-42b6-b3bb-9a1ae2645e50}</Project>
-      <Name>ContosoUniversity.BE</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
