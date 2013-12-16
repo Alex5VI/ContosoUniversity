@@ -18,6 +18,8 @@ namespace ContosoUniversity.WCF
         [OperationContract]
         int insertarEstudiante(Estudiante _obj);
         [OperationContract]
+        void eliminarEstudiante(int _StudentID);
+        [OperationContract]
         Estudiante seleccionarEstudiante(int _StudentID);
     }
 }

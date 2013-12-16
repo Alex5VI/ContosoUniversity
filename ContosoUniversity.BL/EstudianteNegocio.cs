@@ -76,5 +76,22 @@ namespace ContosoUniversity.BL
                 }
             }
         #endregion
+
+        #region "Procedimientos Mantenimientos"
+            public void eliminarEstudiante(int _StudentID)
+            {
+                try
+                {
+                    using (EstudianteDatos Dalc = new EstudianteDatos())
+                    {
+                        Dalc.Instancia.eliminarEstudiante(_StudentID);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+        #endregion
     }
 }

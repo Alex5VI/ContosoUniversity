@@ -74,5 +74,33 @@ namespace ContosoUniversity.MVC.Controllers
             obj = clientProxy.seleccionarEstudiante(_id);
             return View(obj);
         }
+        
+        public ActionResult Delete(int _id)
+        {
+            try
+            {
+                BasicHttpBinding binding = new BasicHttpBinding();
+                EndpointAddress endpoint = new EndpointAddress(URI);
+                ChannelFactory<IServiceForMVC> chanFac = new ChannelFactory<IServiceForMVC>(binding, endpoint);
+                IServiceForMVC clientProxy = chanFac.CreateChannel();
+                clientProxy.eliminarEstudiante(_id);
+                return RedirectToAction("Index");
+            }
+            catch (FaultException<IServiceForMVC> e)
+            {
+                Response.Write("Error from Business service layer: " + e.Message);
+                throw;
+            }
+            catch (FaultException ex)
+            {
+                Response.Write("Error from Business service layer: " + ex.Message);
+                throw;
+            }
+            catch (Exception exx)
+            {
+                Response.Write("Error: " + exx.Message);
+                throw;
+            }
+        }
     }
 }
